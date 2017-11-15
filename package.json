@@ -1,0 +1,16 @@
+{
+  "name": "Countries",
+  "version": "0.0.1",
+  "description": "countries listing",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "author": "Derek Maffett",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "webpack": "3.8.1"
+  }
+}
