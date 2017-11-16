@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-class App extends React.Component {
+import { selectCountry, fetchCountry } from '../../ducks/countries';
+import CountriesList from '../countriesList';
+import Country from '../country';
+
+const CountriesListContainer = connect((state) => ({
+    countries: state.countries,
+    selectedCountry: state.selectedCountry
+}), {
+    selectCountry,
+    fetchCountry
+})(CountriesList);
+
+const CountryContainer = connect((state) => ({
+    displayCountry: state.countries[state.selectedCountry]
+}))(Country);
+
+class App extends Component {
     render() {
         return (
-            <div className='stuff'>
-                stuff
+            <div>
+                <CountriesListContainer />
+                <CountryContainer />
             </div>
         );
     }
