@@ -1,9 +1,13 @@
 import React from 'react';
+import styles from './styles.css';
 
 class App extends React.Component {
   render() {
+    console.log('tuff');
     return (
-      <div>stuff</div>
+      <div style={{margin: '10px'}} className={styles.stuff}>
+        stuf
+      </div>
     );
   }
 }
