@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
 	entry: './src/index.jsx',
@@ -17,7 +16,14 @@ const config = {
 				test: /\.css$/,
 				use: [
 					'style-loader',
-					'css-loader'
+					{
+						loader: 'css-loader',
+						options: {
+							camelCase: true,
+							modules: true
+						}
+					}
+
 				]
 			},
 			{
