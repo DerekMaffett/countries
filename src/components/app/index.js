@@ -15,13 +15,14 @@ const CountriesListContainer = connect((state) => ({
 })(CountriesList);
 
 const CountryContainer = connect((state) => ({
-    displayCountry: state.countries[state.selectedCountry]
+    selectedCountry: state.selectedCountry,
+    displayedCountry: state.countries[state.selectedCountry]
 }))(Country);
 
 class App extends Component {
     render() {
         return (
-            <div className="appContainer">
+            <div className="App_appContainer">
                 <CountriesListContainer />
                 <CountryContainer />
             </div>

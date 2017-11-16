@@ -27,7 +27,7 @@ class CountryOption extends Component {
 
 class CountriesList extends Component {
     render() {
-        const { selectedCountry, selectCountry } = this.props;
+        const { countries, selectedCountry, selectCountry, fetchCountry } = this.props;
 
         return (<ul>
             {countryData.map(country => {
@@ -35,12 +35,22 @@ class CountriesList extends Component {
                     <CountryOption
                         selectedCountry={selectedCountry}
                         country={country}
-                        onSelect={selectCountry}
+                        onSelect={this.onSelect(countries, selectCountry, fetchCountry)}
                         key={country.id}
                     />
                 );
             })}
-        </ul>)
+        </ul>);
+    }
+
+    onSelect(countries, selectCountry, fetchCountry) {
+        return id => {
+            selectCountry(id);
+
+            if (!countries[id]) {
+                fetchCountry(id);
+            }
+        }
     }
 }
 

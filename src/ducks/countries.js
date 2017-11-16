@@ -1,3 +1,6 @@
+import { merge } from 'lodash';
+
+import { fetchCountryDetails } from '../api';
 import createReducer from './createReducer';
 
 const initialState = {
@@ -15,22 +18,21 @@ export default createReducer({
         ...state,
         selectedCountry: payload
     }),
+    [FETCH_COUNTRY_SUCCESS]: (state, payload) => ({
+        ...state,
+        countries: merge({}, state.countries, { [payload.id]: payload }),
+    }),
 }, initialState);
 
 export const selectCountry = (id) => {
     return { type: SELECT_COUNTRY, payload: id };
 };
 
-// Temp api
-const api = {
-    fetchCountryDetails: Promise.resolve({id: 'fake'})
-};
-
 export const fetchCountry = (id) => {
     return (dispatch) => {
         dispatch({ type: FETCH_COUNTRY_INIT });
 
-        api.fetchCountryDetails(id)
+        fetchCountryDetails(id)
             .then((country) => dispatch({
                 type: FETCH_COUNTRY_SUCCESS,
                 payload: country
