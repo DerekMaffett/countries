@@ -62,7 +62,7 @@ class CountriesList extends Component {
 }
 
 CountriesList.propTypes = {
-    countries: PropTypes.array.isRequired,
+    countries: PropTypes.object.isRequired,
     selectedCountry: PropTypes.string,
     selectCountry: PropTypes.func.isRequired,
     fetchCountry: PropTypes.func.isRequired
