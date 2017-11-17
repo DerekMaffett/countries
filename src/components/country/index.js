@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Country extends Component {
     render() {
@@ -19,5 +20,10 @@ class Country extends Component {
         );
     }
 }
+
+Country.propTypes = {
+    selectedCountry: PropTypes.string,
+    displayedCountry: PropTypes.object
+};
 
 export default Country;
