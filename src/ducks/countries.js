@@ -9,7 +9,6 @@ const initialState = {
 };
 
 const SELECT_COUNTRY = 'SELECT_COUNTRY';
-const FETCH_COUNTRY_INIT = 'FETCH_COUNTRY_INIT';
 const FETCH_COUNTRY_SUCCESS = 'FETCH_COUNTRY_SUCCESS';
 const FETCH_COUNTRY_FAILURE = 'FETCH_COUNTRY_FAILURE';
 
@@ -30,8 +29,6 @@ export const selectCountry = (id) => {
 
 export const fetchCountry = (id) => {
     return (dispatch) => {
-        dispatch({ type: FETCH_COUNTRY_INIT });
-
         fetchCountryDetails(id)
             .then((country) => dispatch({
                 type: FETCH_COUNTRY_SUCCESS,
