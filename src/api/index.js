@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { pick } from 'lodash';
 
-export const fetchCountryDetails = id => {
+export const fetchCountryDetails = (id) => {
     return axios(`https://restcountries.eu/rest/v2/alpha/${id}`)
-        .then(res => {
+        .then((res) => {
             const { data } = res;
 
             return {

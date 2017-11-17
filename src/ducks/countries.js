@@ -20,8 +20,8 @@ export default createReducer({
     }),
     [FETCH_COUNTRY_SUCCESS]: (state, payload) => ({
         ...state,
-        countries: merge({}, state.countries, { [payload.id]: payload }),
-    }),
+        countries: merge({}, state.countries, { [payload.id]: payload })
+    })
 }, initialState);
 
 export const selectCountry = (id) => {

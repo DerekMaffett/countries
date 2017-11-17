@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import styles from './styles.css';
+import './styles.css';
 import countryData from '../../data/countrySvgs';
 
 class CountryOption extends Component {
@@ -25,12 +26,18 @@ class CountryOption extends Component {
     }
 }
 
+CountryOption.propTypes = {
+    country: PropTypes.object.isRequired, // Country option
+    selectedCountry: PropTypes.string,
+    onSelect: PropTypes.func.isRequired
+};
+
 class CountriesList extends Component {
     render() {
         const { countries, selectedCountry, selectCountry, fetchCountry } = this.props;
 
         return (<ul>
-            {countryData.map(country => {
+            {countryData.map((country) => {
                 return (
                     <CountryOption
                         selectedCountry={selectedCountry}
@@ -44,14 +51,21 @@ class CountriesList extends Component {
     }
 
     onSelect(countries, selectCountry, fetchCountry) {
-        return id => {
+        return (id) => {
             selectCountry(id);
 
             if (!countries[id]) {
                 fetchCountry(id);
             }
-        }
+        };
     }
 }
+
+CountriesList.propTypes = {
+    countries: PropTypes.array.isRequired,
+    selectedCountry: PropTypes.string,
+    selectCountry: PropTypes.func.isRequired,
+    fetchCountry: PropTypes.func.isRequired
+};
 
 export default CountriesList;
