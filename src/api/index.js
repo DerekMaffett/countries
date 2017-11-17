@@ -1,6 +1,13 @@
 import axios from 'axios';
+import { includes } from 'lodash';
+
+import apiPatch from './apiPatch';
 
 export const fetchCountryDetails = (id) => {
+    if (id.match('GB-')) {
+        return Promise.resolve(apiPatch[id]);
+    }
+
     return axios(`https://restcountries.eu/rest/v2/alpha/${id}`)
         .then((res) => {
             const { data } = res;

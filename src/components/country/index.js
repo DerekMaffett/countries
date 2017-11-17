@@ -5,6 +5,10 @@ import './styles.css';
 import Flag from '../common/flag';
 
 const DetailField = ({ name, data, suffix }) => {
+    if (data === undefined) {
+        return null;
+    }
+
     return (
         <div>
             <span className="Country_fieldName">{name}: </span>
