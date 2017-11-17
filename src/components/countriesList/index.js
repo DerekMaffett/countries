@@ -34,25 +34,30 @@ class CountryOption extends Component {
 CountryOption.propTypes = {
     country: PropTypes.object.isRequired, // Country option
     selectedCountry: PropTypes.string,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
+    style: PropTypes.object
 };
 
 class CountriesList extends Component {
     render() {
-        return <div className="CountriesList_container">
-            <AutoSizer>
-                {({ height, width }) => {
-                    return <List
-                        className="CountriesList_list"
-                        width={width}
-                        height={height}
-                        rowCount={countryData.length}
-                        rowHeight={120}
-                        rowRenderer={this.getRowRenderer(this.props)}
-                    />
-                }}
-            </AutoSizer>
-        </div>;
+        return (
+            <div className="CountriesList_container">
+                <AutoSizer>
+                    {({ height, width }) => {
+                        return (
+                            <List
+                                className="CountriesList_list"
+                                width={width}
+                                height={height}
+                                rowCount={countryData.length}
+                                rowHeight={120}
+                                rowRenderer={this.getRowRenderer(this.props)}
+                            />
+                        );
+                    }}
+                </AutoSizer>
+            </div>
+        );
     }
 
     getRowRenderer({ countries, selectedCountry, selectCountry, fetchCountry }) {

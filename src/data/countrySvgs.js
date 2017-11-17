@@ -1,4 +1,4 @@
-import { includes, flow, toLower, map, sortBy } from 'lodash';
+import { flow, toLower, map, sortBy } from 'lodash';
 
 const countryCodeMap = require('../../node_modules/svg-country-flags/countries.json');
 

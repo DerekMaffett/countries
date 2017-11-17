@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactSVG from 'react-svg';
 
 import './styles.css';
 import { getFlagPath } from '../../data/countrySvgs';
 
 class Flag extends Component {
     render() {
-        return <div className={this.props.className}>
-            <img
-                className="Flag_img"
-                src={getFlagPath('sm', this.props.id)}
-            />
-        </div>
+        return (
+            <div className={this.props.className}>
+                <img
+                    className="Flag_img"
+                    src={getFlagPath('sm', this.props.id)}
+                />
+            </div>
+        );
     }
 }
 
 Flag.propTypes = {
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    className: PropTypes.string
 };
 
 export default Flag;
