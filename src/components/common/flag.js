@@ -20,7 +20,7 @@ class Flag extends Component {
 
 Flag.propTypes = {
     id: PropTypes.string.isRequired,
-    size: PropTypes.oneOf(["sm", "md"]),
+    size: PropTypes.oneOf(['sm', 'md']),
     className: PropTypes.string
 };
 
