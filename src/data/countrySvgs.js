@@ -1,6 +1,6 @@
 import { flow, toLower, map, sortBy } from 'lodash';
 
-export const countryCodeMap = require('../../node_modules/svg-country-flags/countries.json');
+import countryCodeMap from '../../node_modules/svg-country-flags/countries.json';
 
 const SIZES = {
     sm: 100,
@@ -24,3 +24,5 @@ export const getFlagPath = (size, id) => {
 
     return `../../node_modules/svg-country-flags/png${width}px/${toLower(id)}.png`;
 };
+
+export { countryCodeMap };
