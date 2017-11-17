@@ -1,58 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import { toLower } from 'lodash';
 import { AutoSizer, List } from 'react-virtualized';
 
 import './styles.css';
 import { countries as countryData } from '../../data/countrySvgs';
-import Flag from '../common/flag';
-
-class CountryOption extends Component {
-    render() {
-        const { style, country, selectedCountry, onSelect } = this.props;
-
-        return (
-            <div
-                onClick={this.handleOnClick(country.id, onSelect)}
-                className={classnames({
-                    'CountryOption_option': true,
-                    'CountryOption_selected': selectedCountry === country.id
-                })}
-                style={style}
-            >
-                <Flag className="CountryOption_flagContainer" size="sm" id={country.id}/>
-                <span className="CountryOption_name">{country.name}</span>
-            </div>
-        );
-    }
-
-    handleOnClick(id, onSelect) {
-        return () => onSelect(id);
-    }
-}
-
-CountryOption.propTypes = {
-    country: PropTypes.object.isRequired, // Country option
-    selectedCountry: PropTypes.string,
-    onSelect: PropTypes.func.isRequired,
-    style: PropTypes.object
-};
-
-class Input extends Component {
-    render() {
-        return (
-            <input
-                className={this.props.className}
-                onChange={this.handleChange.bind(this)}
-            />
-        );
-    }
-
-    handleChange(event) {
-        this.props.onChange(event.target.value);
-    }
-}
+import Input from './input';
+import CountryOption from './countryOption';
 
 class CountriesList extends Component {
     constructor(props) {
@@ -97,7 +51,8 @@ class CountriesList extends Component {
         const lowerCaseFilter = toLower(filter);
 
         return countries.filter((country) => {
-            return toLower(country.name).match(filter) || toLower(country.id).match(filter);
+            return toLower(country.name).match(lowerCaseFilter) ||
+                toLower(country.id).match(lowerCaseFilter);
         });
     }
 
