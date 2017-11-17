@@ -16,7 +16,7 @@ const CountriesListContainer = connect((state) => ({
 
 const CountryContainer = connect((state) => ({
     selectedCountry: state.selectedCountry,
-    displayedCountry: state.countries[state.selectedCountry]
+    countryDetails: state.countries[state.selectedCountry]
 }))(Country);
 
 class App extends Component {

@@ -1,29 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './styles.css';
+import Flag from '../common/flag';
+
 class Country extends Component {
     render() {
-        const { selectedCountry, displayedCountry } = this.props;
+        const { selectedCountry, countryDetails } = this.props;
 
-        if (!selectedCountry) {
+        if (!selectedCountry ) {
             return null;
         }
 
-        if (!displayedCountry) {
-            return <p>LOADING</p>;
+        if (!countryDetails) {
+            return (
+                <div className="Country_spinner">
+                    <img src="./public/spinner.svg" />
+                </div>
+            );
         }
 
         return (
             <div>
-                <p>{displayedCountry.id}</p>
+                <Flag size="md" id={selectedCountry} />
             </div>
         );
+
     }
 }
 
 Country.propTypes = {
     selectedCountry: PropTypes.string,
-    displayedCountry: PropTypes.object
+    countryDetails: PropTypes.object
 };
 
 export default Country;
