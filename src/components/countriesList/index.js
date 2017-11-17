@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { toLower } from 'lodash';
 import { AutoSizer, List } from 'react-virtualized';
 
 import './styles.css';
@@ -38,18 +39,44 @@ CountryOption.propTypes = {
     style: PropTypes.object
 };
 
+class Input extends Component {
+    render() {
+        return (
+            <input
+                className={this.props.className}
+                onChange={this.handleChange.bind(this)}
+            />
+        );
+    }
+
+    handleChange(event) {
+        this.props.onChange(event.target.value);
+    }
+}
+
 class CountriesList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            filteredCountryOptions: countryData
+        };
+    }
+
     render() {
         return (
             <div className="CountriesList_container">
+                <Input
+                    className="CountriesList_filter"
+                    onChange={this.handleFilterChange.bind(this)}
+                />
                 <AutoSizer>
                     {({ height, width }) => {
                         return (
                             <List
                                 className="CountriesList_list"
                                 width={width}
-                                height={height}
-                                rowCount={countryData.length}
+                                height={height - 50}
+                                rowCount={this.state.filteredCountryOptions.length}
                                 rowHeight={125}
                                 rowRenderer={this.getRowRenderer(this.props)}
                             />
@@ -60,13 +87,27 @@ class CountriesList extends Component {
         );
     }
 
+    handleFilterChange(newFilter) {
+        this.setState({
+            filteredCountryOptions: this.filterCountries(newFilter, countryData)
+        });
+    }
+
+    filterCountries(filter, countries) {
+        const lowerCaseFilter = toLower(filter);
+
+        return countries.filter((country) => {
+            return toLower(country.name).match(filter) || toLower(country.id).match(filter);
+        });
+    }
+
     getRowRenderer({ countries, selectedCountry, selectCountry, fetchCountry }) {
         return ({ key, index, style }) => {
             return <CountryOption
                 key={key}
                 style={style}
                 selectedCountry={selectedCountry}
-                country={countryData[index]}
+                country={this.state.filteredCountryOptions[index]}
                 onSelect={this.onSelect(countries, selectCountry, fetchCountry)}
             />;
         };
