@@ -1,3 +1,18 @@
+@import "../common.css";
+
 .CountriesList_selected {
-    font-weight: bold;
+    background-color: var(--light-blue);
+}
+
+.CountriesList_container {
+    height: 100%;
+    width: 50%;
+}
+
+.CountriesList_list {
+    outline: none;
+}
+
+.CountryOption_name {
+    font-size: var(--font3);
 }
