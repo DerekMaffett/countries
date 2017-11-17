@@ -8,7 +8,7 @@ export const fetchCountryDetails = (id) => {
         return Promise.resolve(apiPatch[id]);
     }
 
-    return axios(`https://restcountries.eu/rest/v2/alpha/${id}`)
+    return axios.get(`https://restcountries.eu/rest/v2/alpha/${id}`)
         .then((res) => {
             const { data } = res;
 
