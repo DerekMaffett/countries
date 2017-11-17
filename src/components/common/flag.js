@@ -6,11 +6,12 @@ import { getFlagPath } from '../../data/countrySvgs';
 
 class Flag extends Component {
     render() {
+        const { id, size, className } = this.props;
+
         return (
-            <div className={this.props.className}>
+            <div className={className}>
                 <img
-                    className="Flag_img"
-                    src={getFlagPath('sm', this.props.id)}
+                    src={getFlagPath(size, id)}
                 />
             </div>
         );
@@ -19,6 +20,7 @@ class Flag extends Component {
 
 Flag.propTypes = {
     id: PropTypes.string.isRequired,
+    size: PropTypes.oneOf(["sm", "md"]),
     className: PropTypes.string
 };
 

@@ -20,7 +20,7 @@ class CountryOption extends Component {
                 })}
                 style={style}
             >
-                <Flag className="CountryOption_flagContainer" id={country.id}/>
+                <Flag className="CountryOption_flagContainer" size="sm" id={country.id}/>
                 <span className="CountryOption_name">{country.name}</span>
             </div>
         );
@@ -50,7 +50,7 @@ class CountriesList extends Component {
                                 width={width}
                                 height={height}
                                 rowCount={countryData.length}
-                                rowHeight={120}
+                                rowHeight={125}
                                 rowRenderer={this.getRowRenderer(this.props)}
                             />
                         );
