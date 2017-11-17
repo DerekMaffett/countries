@@ -1,3 +1,26 @@
+@import "../variables.css";
+
+.Country_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .Country_spinner {
     margin: auto;
+}
+
+.Country_name {
+    margin: 5px auto;
+    font-size: var(--font5);
+}
+
+.Country_header {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+}
+
+.Country_flagContainer {
+    margin: 0 auto;
 }

@@ -21,8 +21,11 @@ class Country extends Component {
         }
 
         return (
-            <div>
-                <Flag size="md" id={selectedCountry} />
+            <div className="Country_container">
+                <div className="Country_header">
+                    <span className="Country_name">{countryDetails.name}</span>
+                    <Flag className="Country_flagContainer" size="md" id={selectedCountry} />
+                </div>
             </div>
         );
 

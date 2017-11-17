@@ -1,4 +1,7 @@
+@import "../variables.css";
+
 .App_appContainer {
+    background-color: var(--light-grey);
     display: flex;
     flex-direction: row;
 }
