@@ -1,12 +1,9 @@
-@import "../common.css";
-
-.CountriesList_selected {
-    background-color: var(--light-blue);
-}
+@import "../variables.css";
 
 .CountriesList_container {
     height: 100%;
     width: 50%;
+    background-color: var(--light-grey);
 }
 
 .CountriesList_list {
@@ -16,3 +13,13 @@
 .CountryOption_name {
     font-size: var(--font3);
 }
+
+.CountryOption_option {
+    display: flex;
+    margin: 5px 0;
+}
+
+.CountryOption_selected {
+    background-color: var(--light-blue);
+}
+

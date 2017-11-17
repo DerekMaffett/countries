@@ -4,7 +4,8 @@ import classnames from 'classnames';
 import { AutoSizer, List } from 'react-virtualized';
 
 import './styles.css';
-import countryData from '../../data/countrySvgs';
+import { countries as countryData } from '../../data/countrySvgs';
+import Flag from '../common/flag';
 
 class CountryOption extends Component {
     render() {
@@ -14,10 +15,12 @@ class CountryOption extends Component {
             <div
                 onClick={this.handleOnClick(country.id, onSelect)}
                 className={classnames({
-                    'CountriesList_selected': selectedCountry === country.id
+                    'CountryOption_option': true,
+                    'CountryOption_selected': selectedCountry === country.id
                 })}
                 style={style}
             >
+                <Flag id={country.id}/>
                 <span className="CountryOption_name">{country.name}</span>
             </div>
         );
@@ -44,7 +47,7 @@ class CountriesList extends Component {
                         width={width}
                         height={height}
                         rowCount={countryData.length}
-                        rowHeight={50}
+                        rowHeight={120}
                         rowRenderer={this.getRowRenderer(this.props)}
                     />
                 }}
