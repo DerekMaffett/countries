@@ -13,11 +13,17 @@ const DetailField = ({ name, data, suffix }) => {
     );
 };
 
+DetailField.propTypes = {
+    name: PropTypes.string.isRequired,
+    data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    suffix: PropTypes.string
+};
+
 class Country extends Component {
     render() {
         const { selectedCountry, countryDetails } = this.props;
 
-        if (!selectedCountry ) {
+        if (!selectedCountry) {
             return null;
         }
 
@@ -42,7 +48,6 @@ class Country extends Component {
                 </div>
             </div>
         );
-
     }
 }
 
