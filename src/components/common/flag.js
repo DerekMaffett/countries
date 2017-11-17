@@ -7,7 +7,7 @@ import { getFlagPath } from '../../data/countrySvgs';
 
 class Flag extends Component {
     render() {
-        return <div className="Flag_wrapper">
+        return <div className={this.props.className}>
             <img
                 className="Flag_img"
                 src={getFlagPath('sm', this.props.id)}

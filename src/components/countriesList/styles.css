@@ -11,15 +11,19 @@
 }
 
 .CountryOption_name {
+    margin: auto 0;
     font-size: var(--font3);
 }
 
 .CountryOption_option {
     display: flex;
-    margin: 5px 0;
 }
 
 .CountryOption_selected {
     background-color: var(--light-blue);
 }
 
+.CountryOption_flagContainer {
+    flex: 0 0 140px;
+    margin: auto 0;
+}

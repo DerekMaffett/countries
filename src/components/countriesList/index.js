@@ -20,7 +20,7 @@ class CountryOption extends Component {
                 })}
                 style={style}
             >
-                <Flag id={country.id}/>
+                <Flag className="CountryOption_flagContainer" id={country.id}/>
                 <span className="CountryOption_name">{country.name}</span>
             </div>
         );
