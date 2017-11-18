@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { includes } from 'lodash';
 
 import apiPatch from './apiPatch';
 
