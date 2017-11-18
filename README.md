@@ -38,7 +38,7 @@ incorrectly on Firefox, but Chrome and Safari don't have the same issue. In a
 real production app I would either use a different approach or wait to deploy
 until the problem was figured out, but since this is a test app I've decided
 to leave this as it is. I would advise using Chrome or Safari to view this app
-currently. 
+currently.
 2. There is a very slight problem with the border alignment
 between the search box and the rest of the countries list. This is partially
 related to React-Virtualized. I would fix it in a production app, but as
