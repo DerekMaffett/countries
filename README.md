@@ -18,8 +18,8 @@ Alternatively, run each of these individually with:
 
 # Design Choices
 
-This project is supported by full tooling with webpack, es6, mocha tests,
-and eslint. 
+This project is supported by full tooling with webpack, es6, mocha tests using
+sinon and enzyme, and eslint.
 
 The backbone of the app is written with React and Redux using the [ducks
 architecture][ducks architecture] pattern - I've found it to be a simple
