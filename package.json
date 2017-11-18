@@ -9,7 +9,8 @@
         "dev": "webpack-dev-server --hot --inline",
         "start": "npm run lint && npm run test && webpack-dev-server --open",
         "lint": "eslint ./src",
-        "test": "mocha-webpack \"test/**/*.spec.js\" -r chai/register-expect"
+        "test": "mocha-webpack \"test/**/*.spec.js\" -r chai/register-expect -r test/jsdom.js",
+        "test-watch": "mocha-webpack \"test/**/*.spec.js\" -r chai/register-expect -r test/jsdom.js --watch"
     },
     "author": "Derek Maffett",
     "license": "ISC",
@@ -37,6 +38,7 @@
         "babel-preset-react": "6.24.1",
         "chai": "^4.1.2",
         "css-loader": "0.28.7",
+        "enzyme": "^3.2.0",
         "eslint": "^4.11.0",
         "eslint-config-standard": "^10.2.1",
         "eslint-plugin-import": "^2.8.0",
@@ -44,6 +46,7 @@
         "eslint-plugin-promise": "^3.6.0",
         "eslint-plugin-react": "^7.4.0",
         "eslint-plugin-standard": "^3.0.1",
+        "jsdom": "^11.3.0",
         "mocha": "^4.0.1",
         "mocha-webpack": "^1.0.1",
         "sinon": "^4.1.2",

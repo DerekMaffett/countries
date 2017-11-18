@@ -32,7 +32,7 @@ class CountriesList extends Component {
                                 height={height - 50}
                                 rowCount={this.state.filteredCountryOptions.length}
                                 rowHeight={125}
-                                rowRenderer={this.getRowRenderer(this.props)}
+                                rowRenderer={this.getRowRenderer().bind(this)}
                             />
                         );
                     }}
@@ -56,7 +56,9 @@ class CountriesList extends Component {
         });
     }
 
-    getRowRenderer({ countries, selectedCountry, selectCountry, fetchCountry }) {
+    getRowRenderer() {
+        const { countries, selectedCountry, selectCountry, fetchCountry } = this.props;
+
         return ({ key, index, style }) => {
             return <CountryOption
                 key={key}

@@ -3,25 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 import Flag from '../common/flag';
-
-const DetailField = ({ name, data, suffix }) => {
-    if (data === undefined) {
-        return null;
-    }
-
-    return (
-        <div>
-            <span className="Country_fieldName">{name}: </span>
-            <span>{data} {suffix}</span>
-        </div>
-    );
-};
-
-DetailField.propTypes = {
-    name: PropTypes.string.isRequired,
-    data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    suffix: PropTypes.string
-};
+import DetailField from './detailField';
 
 class Country extends Component {
     render() {
@@ -48,7 +30,7 @@ class Country extends Component {
                     <DetailField name="Region" data={countryDetails.region} />
                     <DetailField name="Capital" data={countryDetails.capital} />
                     <DetailField name="Population" data={countryDetails.population} />
-                    <DetailField name="Area" data={countryDetails.area} suffix="km²" />
+                    <DetailField name="Area" data={countryDetails.area} suffix=" km²" />
                 </div>
             </div>
         );
