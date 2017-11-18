@@ -1,6 +1,6 @@
 {
     "name": "Countries",
-    "version": "0.0.8",
+    "version": "0.1.0",
     "description": "countries listing",
     "main": "index.js",
     "scripts": {
