@@ -1,6 +1,6 @@
 @import "../variables.css";
 
-.App_appContainer {
+.container {
     background-color: var(--light-grey);
     display: flex;
     flex-direction: row;

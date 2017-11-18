@@ -1,21 +1,21 @@
 @import "../variables.css";
 
-.Country_container {
+.container {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
 }
 
-.Country_spinner {
+.spinner {
     margin: auto;
 }
 
-.Country_name {
+.name {
     margin: 5px auto;
     font-size: var(--font5);
 }
 
-.Country_detailsContainer {
+.detailsContainer {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -23,10 +23,10 @@
     font-size: var(--font3);
 }
 
-.Country_flagContainer {
+.flagContainer {
     margin: 10px auto;
 }
 
-.Country_fieldName {
+.fieldName {
     font-weight: bold;
 }

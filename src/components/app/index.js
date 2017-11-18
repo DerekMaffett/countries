@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import './styles.css';
+import styles from './styles.css';
 import { selectCountry, fetchCountry } from '../../ducks/countries';
 import CountriesList from '../countriesList';
 import Country from '../country';
@@ -22,7 +22,7 @@ const CountryContainer = connect((state) => ({
 class App extends Component {
     render() {
         return (
-            <div className="App_appContainer">
+            <div className={styles.container}>
                 <CountriesListContainer />
                 <CountryContainer />
             </div>

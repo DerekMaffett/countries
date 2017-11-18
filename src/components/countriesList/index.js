@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { toLower } from 'lodash';
 import { AutoSizer, List } from 'react-virtualized';
 
-import './styles.css';
+import styles from './styles.css';
 import { countries as countryData } from '../../data/countrySvgs';
 import Input from './input';
 import CountryOption from './countryOption';
@@ -18,16 +18,16 @@ class CountriesList extends Component {
 
     render() {
         return (
-            <div className="CountriesList_container">
+            <div className={styles.container}>
                 <Input
-                    className="CountriesList_filter"
+                    className={styles.filter}
                     onChange={this.handleFilterChange.bind(this)}
                 />
                 <AutoSizer>
                     {({ height, width }) => {
                         return (
                             <List
-                                className="CountriesList_list"
+                                className={styles.list}
                                 width={width}
                                 height={height - 50}
                                 rowCount={this.state.filteredCountryOptions.length}

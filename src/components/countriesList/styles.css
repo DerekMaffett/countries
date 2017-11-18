@@ -1,11 +1,11 @@
 @import "../variables.css";
 
-.CountriesList_container {
+.container {
     height: 100%;
     flex: 0 0 400px;
 }
 
-.CountriesList_filter {
+.filter {
     width: 100%;
     height: 50px;
     border: 3px solid var(--dark-grey);
@@ -13,26 +13,26 @@
     outline: none;
 }
 
-.CountriesList_list {
+.list {
     outline: none;
     margin-left: -1px;
     border-right: 3px solid var(--dark-grey);
 }
 
-.CountryOption_name {
+.name {
     margin: auto 0;
     font-size: var(--font3);
 }
 
-.CountryOption_option {
+.option {
     display: flex;
 }
 
-.CountryOption_selected {
+.selected {
     background-color: var(--light-blue);
 }
 
-.CountryOption_flagContainer {
+.flagContainer {
     flex: 0 0 140px;
     margin: auto 1px;
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './styles.css';
 import { getFlagPath } from '../../data/countrySvgs';
 
 class Flag extends Component {

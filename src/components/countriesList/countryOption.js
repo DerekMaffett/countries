@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import './styles.css';
+import styles from './styles.css';
 import Flag from '../common/flag';
 
 class CountryOption extends Component {
@@ -13,13 +13,13 @@ class CountryOption extends Component {
             <div
                 onClick={this.handleOnClick(country.id, onSelect)}
                 className={classnames({
-                    'CountryOption_option': true,
-                    'CountryOption_selected': selectedCountry === country.id
+                    [styles.option]: true,
+                    [styles.selected]: selectedCountry === country.id
                 })}
                 style={style}
             >
-                <Flag className="CountryOption_flagContainer" size="sm" id={country.id}/>
-                <span className="CountryOption_name">{country.name}</span>
+                <Flag className={styles.flagContainer} size="sm" id={country.id}/>
+                <span className={styles.name}>{country.name}</span>
             </div>
         );
     }

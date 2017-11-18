@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './styles.css';
+
 const DetailField = ({ name, data, suffix }) => {
     if (data === undefined) {
         return null;
@@ -8,7 +10,7 @@ const DetailField = ({ name, data, suffix }) => {
 
     return (
         <div>
-            <span className="Country_fieldName">{name}: </span>
+            <span className={styles.fieldName}>{name}: </span>
             <span>{data}{suffix}</span>
         </div>
     );
