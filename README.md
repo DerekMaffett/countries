@@ -33,12 +33,12 @@ either country code or name.
 
 # Known Issues
 
-1. I would prefer to use the [CSS Modules][CSS Modules] pattern in its entirety
-but I was having trouble getting the css loader for webpack to work as
-suggested in its documentation. This may be a current problem in its version,
-but I decided to leave it alone for this project and instead explicitly
-scope each css class to the React components that use them instead.
-
+1. There is currently a problem with React-Virtualized rendering
+incorrectly on Firefox, but Chrome and Safari don't have the same issue. In a
+real production app I would either use a different approach or wait to deploy
+until the problem was figured out, but since this is a test app I've decided
+to leave this as it is. I would advise using Chrome or Safari to view this app
+currently. 
 2. There is a very slight problem with the border alignment
 between the search box and the rest of the countries list. This is partially
 related to React-Virtualized. I would fix it in a production app, but as
