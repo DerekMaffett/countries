@@ -31,7 +31,7 @@ to render fewer country options at once - items only exist in the DOM when
 you scroll to them. I also added a filter to enable searching for countries by
 either country code or name.
 
-## Known Issues
+# Known Issues
 
 1. I would prefer to use the [CSS Modules][CSS Modules] pattern in its entirety
 but I was having trouble getting the css loader for webpack to work as
