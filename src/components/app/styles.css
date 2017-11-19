@@ -1,5 +1,9 @@
 @import "../variables.css";
 
+body {
+    margin: 0;
+}
+
 .container {
     background-color: var(--light-grey);
     display: flex;
